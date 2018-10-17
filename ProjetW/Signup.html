@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>C.E.D.IT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+<script src="js/control.js">
+
+</script>
+    <style media="screen">
+      .para{
+        size:28px;font-style:bold;font-family:verdana;padding-bottom:20px;
+        padding-left:20px;
+      }
+      .cor{color:White;}
+      .cor1{color:rgba(255, 0, 0, 0.3);}
+
+      .para1{
+        size:28px;font-style:bold;font-family:verdana;padding-bottom:20px;
+        padding-left:20px;
+      }
+      .forma{margin:auto;
+        border : 2px solid black;
+        width:70%;
+        padding:20px;
+        border-radius: 5%;
+        background-image: url('Pics/3.jpg');
+      }
+      .but{margin-left:40%;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Menu</h3>
+          <ul class="nav nav-tabs">
+           <li ><a href="Index.html">Home</a></li>
+           <li class="active"><a href="#">Sign up</a></li>
+           <li><a href="Login.html">Login</a></li>
+           <li><a href="Contact.html">Contact Us</a></li>
+          </ul>
+         <br>
+      </div>
+      <div class="container">
+        <form class="forma" action="index.html" method="post">
+          <div class="form-group para">
+                     <label for="Firstname"class="cor">First Name</label>
+                     <input type="text" class="form-control" id="Firstname" >
+                      <div class="alert alert-danger" Id='name'>
+                        <strong>Error</strong> Insert your first name
+                      </div>
+             </div>
+             <div class="form-group para1">
+                     <label for="Lastname"class="cor1">Lastname</label>
+                     <input type="text" class="form-control" id="Last Name">
+
+             </div>
+             <div class="form-group para1">
+                     <label for="Username"class="cor1">Username</label>
+                     <input type="text" class="form-control" id="Username">
+
+             </div>
+             <div class="form-group para">
+                     <label for="Password"class="cor">Password</label>
+                     <input type="password" class="form-control" id="Password">
+
+             </div>
+             <div class="form-group para">
+                     <label for="BirthDate"class="cor">Birth Date</label>
+                     <input type="textarea" class="form-control" id="BirthDate" placeholder="DD/MM/YY ">
+
+             </div>
+             <div class="form-group para">
+                     <label for="PhoneNumber"class="cor">Phone Number</label>
+                     <input type="text" class="form-control" id="PhoneNumber">
+
+             </div>
+             <div class="form-group para">
+                     <label for="Adress"class="cor">Adresse</label>
+                     <input type="textarea" class="form-control" id="Adresse" placeholder="13 Street ...">
+
+             </div>
+             <div class="form-group para">
+                     <label for="Email"class="cor">Email</label>
+                     <input type="text" data-toggle="popover" data-placement="bottom"  data-content="The Email has to be Valid in Order to receive our daily updates"class="form-control" id="Email" placeholder="JohnDoe@mail.com">
+             </div>
+            <div class="but">
+             <button type="button" class="btn btn-danger btn-md"> Cancel</button>
+            <button type="button" class="btn btn-success btn-md" onclick="test();">Submit</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </body>
+</html>
