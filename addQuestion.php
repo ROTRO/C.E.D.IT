@@ -23,10 +23,10 @@ $request1 =("INSERT INTO `answers`(`Answers`, `CC`) VALUES ('$A1',$question)");
 $request2 =("INSERT INTO `answers`(`Answers`, `CC`) VALUES ('$A2',$question)");
 $request3 =("INSERT INTO `answers`(`Answers`, `CC`) VALUES ('$A3',$question)");
 $request4 =("INSERT INTO `answers`(`Answers`, `CC`) VALUES ('$A4',$question)");
-
+var_dump($bdd->exec($request1));
 $bdd->exec($request1);
 $bdd->exec($request2);
 $bdd->exec($request3);
 $bdd->exec($request4);
-header('location:add question.PHP');
+//header('location:add question.PHP');
   ?>
