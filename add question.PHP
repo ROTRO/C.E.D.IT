@@ -15,7 +15,7 @@
                    <label for="Q"class="cor">Question</label>
                    <input type="text" class="form-control" id="Q" name="Q" >
            </div>
-           <div class="form-group para1">
+           <div class="form-group para1">tr
                    <label for="A1"class="cor1">Answer 1</label>
                    <input type="text" class="form-control" id="A1" name="A1">
            </div>
