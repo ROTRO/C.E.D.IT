@@ -6,54 +6,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Quiz</title>
+
     <?php
+
+   $i=0;
     require 'Connect.php';
     $reponse = $bdd->query('SELECT Answers,CA,CC FROM answers');
     $reponse1= $bdd->query('SELECT Question,CQ FROM questions');
     $Tab=array();
-    $i=0;
+
+
+
 while ($donnees = $reponse->fetch())
 {
    $tab[]=$donnees;
 
 }
-for ($row = 0; $row < count($tab); $row=$row+4) {
-
-   {
-    $_POST['1']=$tab[1][2];
-    $_POST['2']=$tab[2][2];
-    $_POST['3']=$tab[3][2];
-    $_POST['4']=$tab[4][2];
-  }
+while ($donnees = $reponse1->fetch())
+{
+   $tab1[]=$donnees;
 }
- ?>
-    <script>
 
-    tab = ["What does HTML stand for?",'Who is making the Web standards?','Choose the correct HTML element for the largest heading:'];
+function eext()
+{
+   $GLOBALS['i']=$GLOBALS['i']+4;
+   print $GLOBALS['i'];
+}
+
+?>
+
+
+     <script>
+
+    tab = <?php echo json_encode($GLOBALS['tab1'])?>;
     i=0;
     j=0;
-    tab1=[' Hyperlinks and Text Markup Language',' Hyper Text Markup Language',' Home Tool Markup Language',' HTML TEXT MARKUP LANGUAGE',' Mozilla',' The World Wide Web Consortium',' Microsoft',' Google',' h1',' heading',' h6',' head'];
+    tab1=<?php echo json_encode($GLOBALS['tab'])?>;
 
     window.onload = function what(){
 
-    document.getElementById('Q').innerHTML=tab[0];
-    //document.getElementById('1').innerHTML=tab1[0];
-    //document.getElementById('2').innerHTML=tab1[1];
-    //document.getElementById('3').innerHTML=tab1[2];
-    //document.getElementById('4').innerHTML=tab1[3];};
+    document.getElementById('Q').innerHTML=tab[0][0];
+    document.getElementById('1').innerHTML=tab1[0][0];
+    document.getElementById('2').innerHTML=tab1[1][0];
+    document.getElementById('3').innerHTML=tab1[2][0];
+    document.getElementById('4').innerHTML=tab1[3][0];};
     function next(){
       if(document.getElementById('a').checked == false && document.getElementById('b').checked == false && document.getElementById('c').checked == false && document.getElementById('d').checked == false )
       {alert('Veuillez selectioner au moins un Reponse');}
-       else if(tab[i+1]==undefined)
+       else if(tab[i][i+1]==undefined)
        {alert('No further questions');}
       else {
         i++;
         j=j+4;
-        document.getElementById('Q').innerHTML=tab[i];
-        //document.getElementById('1').innerHTML=tab1[j];
-        //document.getElementById('2').innerHTML=tab1[j+1];
-        //document.getElementById('3').innerHTML=tab1[j+2];
-        //document.getElementById('4').innerHTML=tab1[j+3];
+        document.getElementById('Q').innerHTML=tab[i][0];
+        document.getElementById('1').innerHTML=tab1[j][0];
+        document.getElementById('2').innerHTML=tab1[j+1][0];
+        document.getElementById('3').innerHTML=tab1[j+2][0];
+        document.getElementById('4').innerHTML=tab1[j+3][0];
       }
     }
     </script>
@@ -103,20 +112,20 @@ var x = setInterval(function() {
      <div style='border: 2px solid black;'>
      <div class='jumbotron' style='width:90%'>
        <form action='Quiz.php' method='Post'>
-       <h3 style='text-align:center;color:midnightblack;margin-top:2%;padding-right:5%;' id='Q' > :</h3>
+       <h3 style='text-align:center;color:midnightblack;margin-top:2%;padding-right:5%;' id='Q' ><?php echo ' '.$tab1[$GLOBALS['i']][0]; ?> :</h3>
        <table style=''>
 
-      <tr><td> <input type='radio' id='a'></td><td id='1'name='1'></td></tr>
-      <tr><td> <input type='radio' id='b'></td><td id='2'name='2'></td></tr>
-      <tr><td> <input type='radio' id='c'></td><td id='3'name='3'></td></tr>
-      <tr><td> <input type='radio' id='d'></td><td id='4'name='4'></td></tr>
+      <tr><td> <input type='radio' id='a'></td><td id='1'name='1'><?php echo ' '.$tab[$GLOBALS['i']][0]; ?></td></tr>
+      <tr><td> <input type='radio' id='b'></td><td id='2'name='2'><?php echo ' '.$tab[$GLOBALS['i']+1][0]; ?></td></tr>
+      <tr><td> <input type='radio' id='c'></td><td id='3'name='3'><?php echo ' '.$tab[$GLOBALS['i']+2][0]; ?></td></tr>
+      <tr><td> <input type='radio' id='d'></td><td id='4'name='4'><?php echo ' '.$tab[$GLOBALS['i']+3][0]; ?></td></tr>
 
      </table>
      <div style='margin-top:5%;text-align:center;'>
        <button class='btn btn-danger' type='button' id='Backward'>Backward</button>
        <button class='btn btn-success' type='button' onclick='next()' id='Next'>Next</button>
-
      </div>
+     <span id='A'></span>
    </form>
      </div>
    </div>
