@@ -52,7 +52,7 @@
         $("#erreur").text("This Field Password should not be Empty" ).show().fadeIn( 1000 );}
       else {
               $("#erreur").css('visibility','hidden');
-              
+
               $("#envoyer").prop("type", "Submit");
       }
           })
@@ -81,7 +81,7 @@ $email=$_POST["email"];
 $login=$_POST["login"];
 $pw=$_POST["password"];
 }
-$sql = "INSERT INTO student (cin,num_s,fname_s,lname_s,email,tel_s,login_s,pw_s)VALUES('$cin','$ns','$fn','$ln','$email','$tel_s','$login','$pw_s')";
+$sql = "INSERT INTO `student` (`cin`,`num_s`,`fname_s`,`lname_s`,`email`,`tel_s`,`login_s`,`pw_s`)VALUES($cin,$ns,'$fn','$ln','$email',$tel,'$login','$pw')";
 var_dump($sql);
 if ($bdd->exec($sql) === TRUE) {
     echo "New record created successfully";
