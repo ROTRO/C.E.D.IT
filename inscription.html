@@ -23,7 +23,45 @@
       color: #ff5b5b;
       display: none;
       }
-    </style>
+      </style>
+      <script>
+      $(document).ready(function(){
+      $("#envoyer").click(function(){
+
+      if ($("#nom").val() == "") {
+        $("#erreur").css('visibility','visible');
+        $("#erreur").text("The Field Name should not be Empty" ).show().fadeIn( 1000 );}
+      else if($("#prenom").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field Last Name should not be Empty" ).show().fadeIn( 1000 );}
+      else if ($("#tel").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field Telephone should not be Empty" ).show().fadeIn( 1000 );}
+      else if ($("#email").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field Email should not be Empty" ).show().fadeIn( 1000 );}
+      else if ($("#CIN").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field CIN should not be Empty" ).show().fadeIn( 1000 );}
+      else if  ($("#snumber").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field Student Number should not be Empty" ).show().fadeIn( 1000 );}
+      else if ($("#login").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field Username should not be Empty" ).show().fadeIn( 1000 );}
+      else if  ($("#password").val() == "")
+      {$("#erreur").css('visibility','visible');
+        $("#erreur").text("This Field Password should not be Empty" ).show().fadeIn( 1000 );}
+      else {
+              $("#erreur").css('visibility','hidden');
+              $("#envoyer").prop("type", "Submit");
+
+      }
+
+          })
+       })
+     </script>
+
 </head>
 <body style="background-color: rgb(241, 241, 241)">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -78,144 +116,50 @@
                         </div>
                         <div class="col-md-8 py-5 border" style="background-color: rgb(255, 255, 255)">
                             <h4 class="pb-4">Please fill with your details</h4>
-                            <form>
+                            <form method='Post' action='Send.php'>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                       <input id="nom" name="nom" placeholder="First Name" class="form-control" type="text">
                                     </div>
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                                     <script>
-                                     $(document).ready(function(){
-                                     $("#envoyer").click(function(){
 
-                                     if ($("#nom").val() == "") {
-                                       $(".msg-erreur").text("This text was Selected" ).show().fadeIn( 1000 );
 
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
                                     <div class="form-group col-md-6">
                                             <input id="prenom" name="prenom" placeholder="Last name" class="form-control" type="text">
                                     </div>
 
-                                    <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#prenom").val() == "") {
-                                      $("#prenom").next(".msg-erreur").fadeIn().text("Please enter your last name");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+
                                   </div>
                                   <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <input id="tel" name="tel" placeholder="Phone Number" class="form-control" type="text">
                                     </div>
 
-                                    <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#tel").val() == "") {
-                                      $("#tel").next(".msg-erreur").fadeIn().text("Please enter your phone number");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+                                    <span class="etel-erreur"></span>
                                     <div class="form-group col-md-6">
                                             <input type="email" class="form-control" id="Email" placeholder="Email">
                                     </div>
 
-                                    <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#email").val() == "") {
-                                      $("#email").next(".msg-erreur").fadeIn().text("Please enter your email");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+                                    <span class="email-erreur"></span>
                                     <div class="form-group col-md-6">
                                             <input id="CIN" name="CIN" placeholder="CIN" class="form-control" type="text">
                                     </div>
-
-                                    <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#CIN").val() == "") {
-                                      $("#CIN").next(".msg-erreur").fadeIn().text("Please enter your cin");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+                                    <span class="cin-erreur"></span>
                                     <div class="form-group col-md-6">
                                             <input id="snumber" name="snumber" placeholder="Student Number" class="form-control" type="text" >
                                     </div>
 
-                                    <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#snumber").val() == "") {
-                                      $("#snumber").next(".msg-erreur").fadeIn().text("Please enter your number");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+                                    <span class="number-erreur"></span>
                                     <div class="form-group col-md-12">
                                             <input id="login" name="login" placeholder="Username" class="form-control" type="text">
                                     </div>
 
-                                    <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#login").val() == "") {
-                                      $("#login").next(".msg-erreur").fadeIn().text("Please enter your login");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+                                    <span class="login-erreur"></span>
                                     <div class="form-group col-md-12">
                                       <input id="password" name="password" placeholder="Password" class="form-control" type="password" >
                                     </div>
 
-                                     <script>
-                                     $(function(){
-                                     $("#envoyer").click(function(){
-                                      valid=true;
-                                     if ($("#password").val() == "") {
-                                      $("#password").next(".msg-erreur").fadeIn().text("Please enter your password");
-                                      valid=false;
-                                                                        }
-                                     return valid;
-                                         })
-                                      })
-                                    </script>
-                                    <span class="msg-erreur">erreur</span>
+                                    <span class="password-erreur"></span>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
@@ -233,7 +177,9 @@
 
                                 <div class="form-row">
                                     <button type="button" class="btn btn-success" id="envoyer">Submit</button>
+
                                 </div>
+                                <span style='margin-left:30%;visibility:hidden;'class='alert alert-danger'id='erreur'></span>
                             </form>
                         </div>
                     </div>
