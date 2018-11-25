@@ -24,77 +24,74 @@
       }
       </style>
       <script>
-      $(document).ready(function(e){
+      $(document).ready(function(){
       $("#envoyer").click(function(){
       if ($("#nom").val() == "") {
         $("#erreur").css('visibility','visible');
-        $("#erreur").text("The Field Name should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("The Field Name should not be Empty" ).show().fadeIn( 1000 );}
       else if($("#prenom").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field Last Name should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field Last Name should not be Empty" ).show().fadeIn( 1000 );}
       else if ($("#tel").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field Telephone should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field Telephone should not be Empty" ).show().fadeIn( 1000 );}
       else if ($("#email").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field Email should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field Email should not be Empty" ).show().fadeIn( 1000 );}
       else if ($("#CIN").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field CIN should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field CIN should not be Empty" ).show().fadeIn( 1000 );}
       else if  ($("#snumber").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field Student Number should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field Student Number should not be Empty" ).show().fadeIn( 1000 );}
       else if ($("#login").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field Username should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field Username should not be Empty" ).show().fadeIn( 1000 );}
       else if  ($("#password").val() == "")
       {$("#erreur").css('visibility','visible');
-        $("#erreur").text("This Field Password should not be Empty" ).show().fadeIn( 1000 );e.preventDefault();
-}
+        $("#erreur").text("This Field Password should not be Empty" ).show().fadeIn( 1000 );}
       else {
               $("#erreur").css('visibility','hidden');
+
               $("#envoyer").prop("type", "Submit");
       }
-     var filter =/^[a-zA-Z]+$/;
-     if (!filter.test("#prenom")){
-        $("#erreur").css('visibility','visible');
-        $("#erreur").text("name invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
-}
-     if (!filter.test("#nom")){
-        $("#erreur").css('visibility','visible');
-        $("#erreur").text("last name invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
-}
-     var filter =/^[0-9]+$/;
-     if (!filter.test("#tel")){
-        $("#erreur").css('visibility','visible');
-        $("#erreur").text("tel invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
-}
-     if (!filter.test("#CIN")){
-        $("#erreur").css('visibility','visible');
-        $("#erreur").text("CIN invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
-}
-      var filter =/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-      if (!filter.test("#email")){
-        $("#erreur").css('visibility','visible');
-        $("#erreur").text("email invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
-}
           })
        })
-
      </script>
 
 </head>
 
 <body style="background-color: rgb(241, 241, 241)">
+<?php
+try {
+$bdd= new PDO("mysql:host=localhost; dbname=c.e.d.i.t", 'root', '');
+}
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+    var_dump($bdd);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$cin=$_POST['CIN'];
+$ns=$_POST["snumber"];
+$fn=$_POST["prenom"];
+$ln=$_POST["nom"];
+$tel=$_POST["tel"];
+$email=$_POST["email"];
+$login=$_POST["login"];
+$pw=$_POST["password"];
+}
+$sql = "INSERT INTO `student` (`cin`,`num_s`,`fname_s`,`lname_s`,`email`,`tel_s`,`login_s`,`pw_s`)VALUES($cin,$ns,'$fn','$ln','$email',$tel,'$login','$pw')";
+var_dump($sql);
+if ($bdd->exec($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+var_dump($bdd->exec($sql));
+$bdd->close();
 
-
+ ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
