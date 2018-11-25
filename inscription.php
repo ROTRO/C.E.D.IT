@@ -179,35 +179,10 @@
 
 
 <body style="background-color: rgb(241, 241, 241)">
-<?php
-$cin = $sn = $nom = $prenom = $email = $tel = $login = $password = "";
-if (isset($_POST['value'])) {
-    $cin=$_POST["CIN"];
-    $sn=$_POST["snumber"];
-    $nom=$_POST["nom"];
-    $prenom=$_POST["prenom"];
-    $email=$_POST["email"];
-    $tel=$_POST["tel"];
-    $login=$_POST["login"];
-    $password=$_POST["password"];
-}
 
-    try {
-        $bdd= new PDO("mysql:host=localhost; dbname=student", 'root', '');
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO student (cin,num_s,fname_s,lname_s,email,tel_s,login_s,pw_s)VALUES ('$cin','$sn','$prenom','$nom','$email','$tel','$login','$password')";
-        $bdd->exec($sql);
-        echo "New record created successfully";
-        }
-        catch(PDOException $e)
-            {
-            echo "Connection failed: " . $e->getMessage();
-         }
-        
-?>
-    
-    
-    
+
+
+
 
 
 
@@ -316,7 +291,7 @@ if (isset($_POST['value'])) {
 
                             <h4 class="pb-4">Please fill with your details</h4>
 
-                            <form method='Post' action='Send.php'>
+                            <form method='Post' action='inscri.php'>
 
                                 <div class="form-row">
 
