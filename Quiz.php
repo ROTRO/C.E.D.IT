@@ -11,7 +11,7 @@
 
    $i=0;
     require 'Connect.php';
-    $reponse = $bdd->query('SELECT Answers,CA,CC FROM answers');
+    $reponse = $bdd->query('SELECT Answers,CA,CC,Vrai FROM answers');
     $reponse1= $bdd->query('SELECT Question,CQ FROM questions');
     $Tab=array();
 
@@ -41,29 +41,48 @@ function eext()
     tab = <?php echo json_encode($GLOBALS['tab1'])?>;
     i=0;
     j=0;
+    Score=0;
     tab1=<?php echo json_encode($GLOBALS['tab'])?>;
 
     window.onload = function what(){
 
     document.getElementById('Q').innerHTML=tab[0][0];
     document.getElementById('1').innerHTML=tab1[0][0];
+    document.getElementById('a').setAttribute("value",tab1[0][3]);
     document.getElementById('2').innerHTML=tab1[1][0];
+    document.getElementById('b').setAttribute("value",tab1[1][3]);
     document.getElementById('3').innerHTML=tab1[2][0];
-    document.getElementById('4').innerHTML=tab1[3][0];};
+    document.getElementById('c').setAttribute("value",tab1[2][3]);
+    document.getElementById('4').innerHTML=tab1[3][0];
+
+    document.getElementById('d').setAttribute("value",tab1[3][3]);}
+
+    //Function Next
     function next(){
-      if(document.getElementById('a').checked == false && document.getElementById('b').checked == false && document.getElementById('c').checked == false && document.getElementById('d').checked == false )
+      if(document.getElementsById('a').checked == false )
       {alert('Veuillez selectioner au moins un Reponse');}
        else if(tab[i][i+1]==undefined)
-       {alert('No further questions');
+       {alert('No further questions et Votre Score = '+Score);
      }
       else {
+        if(document.getElementByName('a').checked == true)
+         {
+           if(document.getElementByName('a').value =='V')
+            Score++;
+         }
+
+
         i++;
         j=j+4;
         document.getElementById('Q').innerHTML=tab[i][0];
         document.getElementById('1').innerHTML=tab1[j][0];
+        document.getElementById('1').setAttribute("value",tab1[j][3]);
         document.getElementById('2').innerHTML=tab1[j+1][0];
+          document.getElementById('2').setAttribute("value",tab1[j+1][3]);
         document.getElementById('3').innerHTML=tab1[j+2][0];
+        document.getElementById('3').setAttribute("value",tab1[j+2][3]);
         document.getElementById('4').innerHTML=tab1[j+3][0];
+        document.getElementById('4').setAttribute("value",tab1[j+3][3]);
       }
     }
     </script>
@@ -116,10 +135,10 @@ var x = setInterval(function() {
        <h3 style='text-align:center;color:midnightblack;margin-top:2%;padding-right:5%;' id='Q' >:</h3>
        <table style=''>
 
-      <tr><td> <input type='radio' id='a'></td><td id='1'name='1'></td></tr>
-      <tr><td> <input type='radio' id='b'></td><td id='2'name='2'></td></tr>
-      <tr><td> <input type='radio' id='c'></td><td id='3'name='3'></td></tr>
-      <tr><td> <input type='radio' id='d'></td><td id='4'name='4'></td></tr>
+      <tr><td> <input type='radio' name='a' id='a'></td><td id='1'name='1'></td></tr>
+      <tr><td> <input type='radio' name='a' id='b'></td><td id='2'name='2'></td></tr>
+      <tr><td> <input type='radio' name='a' id='c'></td><td id='3'name='3'></td></tr>
+      <tr><td> <input type='radio' name='a' id='d'></td><td id='4'name='4'></td></tr>
 
      </table>
      <div style='margin-top:5%;text-align:center;'>
