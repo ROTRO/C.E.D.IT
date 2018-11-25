@@ -54,7 +54,8 @@ function eext()
       if(document.getElementById('a').checked == false && document.getElementById('b').checked == false && document.getElementById('c').checked == false && document.getElementById('d').checked == false )
       {alert('Veuillez selectioner au moins un Reponse');}
        else if(tab[i][i+1]==undefined)
-       {alert('No further questions');}
+       {alert('No further questions');
+     }
       else {
         i++;
         j=j+4;
