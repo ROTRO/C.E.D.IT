@@ -63,28 +63,25 @@
               $("#envoyer").prop("type", "Submit");
       }
      var filter =/^[a-zA-Z]+$/;
-     if (!filter.test("#prenom")){
+     if (!document.getElementById('nom').value.match(filter)){
         $("#erreur").css('visibility','visible');
-        $("#erreur").text("name invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
+        alert(document.getElementById('nom').value);
+        $("#erreur").text("name  invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
 }
-     if (!filter.test("#nom")){
+     if (!document.getElementById('prenom').value.match(filter)){
         $("#erreur").css('visibility','visible');
         $("#erreur").text("last name invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
 }
      var filter =/^[0-9]+$/;
-     if (!filter.test("#tel")){
+     if (!document.getElementById('tel').value.match(filter)){
         $("#erreur").css('visibility','visible');
         $("#erreur").text("tel invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
 }
-     if (!filter.test("#CIN")){
+     if (!document.getElementById('CIN').value.match(filter)){
         $("#erreur").css('visibility','visible');
         $("#erreur").text("CIN invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
 }
-      var filter =/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-      if (!filter.test("#email")){
-        $("#erreur").css('visibility','visible');
-        $("#erreur").text("email invalid please try again" ).show().fadeIn( 1000 );e.preventDefault();
-}
+
           })
        })
 
