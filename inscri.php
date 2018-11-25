@@ -33,11 +33,13 @@ catch(PDOException $e)
         $bdd->exec($sql);
         var_dump($bdd->exec($sql));
         echo "New record created successfully";
+        header('location:home.html');
 
         }
         catch(PDOException $e)
             {
             echo "Connection failed: " . $e->getMessage();
          }
+        
 
 ?>
