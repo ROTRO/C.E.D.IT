@@ -28,5 +28,5 @@ $bdd->exec($request1);
 $bdd->exec($request2);
 $bdd->exec($request3);
 $bdd->exec($request4);
-//header('location:add question.PHP');
+header('location:add question.PHP');
   ?>
