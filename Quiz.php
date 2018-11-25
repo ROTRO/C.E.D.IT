@@ -59,19 +59,34 @@ function eext()
 
     //Function Next
     function next(){
-      if(document.getElementsById('a').checked == false )
+
+      if((document.getElementById('a').checked == false) && document.getElementById('b').checked == false && document.getElementById('c').checked == false && document.getElementById('d').checked == false)
       {alert('Veuillez selectioner au moins un Reponse');}
        else if(tab[i][i+1]==undefined)
        {alert('No further questions et Votre Score = '+Score);
      }
       else {
-        if(document.getElementByName('a').checked == true)
-         {
-           if(document.getElementByName('a').value =='V')
+        if(document.getElementById('a').checked == true)
+         {document.getElementById('a').checked=false;
+           if(document.getElementById('a').value =='V')
             Score++;
          }
-
-
+         else if(document.getElementById('b').checked == true)
+          {document.getElementById('b').checked=false;
+            if(document.getElementById('b').value =='V')
+             Score++;
+          }
+          else if(document.getElementById('c').checked == true)
+           {document.getElementById('c').checked=false;
+             if(document.getElementById('c').value =='V')
+              Score++;
+           }
+           else if(document.getElementById('d').checked == true)
+            {document.getElementById('d').checked=false;
+              if(document.getElementById('d').value =='V')
+               Score++;
+            }
+            alert(Score);
         i++;
         j=j+4;
         document.getElementById('Q').innerHTML=tab[i][0];
