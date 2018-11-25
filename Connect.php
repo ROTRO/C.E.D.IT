@@ -1,6 +1,6 @@
 <?php
 try {
-$bdd= new PDO("mysql:host=localhost; dbname=127_0_0_1", 'root', '');
+$bdd= new PDO("mysql:host=localhost; dbname=Questions", 'root', '');
 echo "Connection success: ";
 }
 catch(PDOException $e)
