@@ -1,9 +1,7 @@
 <?php
 session_start();
-require "inscription.php";
-require "inscri.php";
-$_SESSION["nom"]=$_POST["nom"];
-$_SESSION["prenom"]=$_POST["prenom"];
+
+echo ' Bienvenue'.$_SESSION['nom'].' '.$_SESSION['prenom'] ;
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +44,7 @@ $_SESSION["prenom"]=$_POST["prenom"];
         <li class="nav-item">
           <a class="nav-link disabled" href="#"><i class="fas fa-scroll"></i> tests</a>
         </li>
-        
+
       </ul>
     </div>
     <form class="form-inline my-2 my-lg-0">
@@ -55,15 +53,15 @@ $_SESSION["prenom"]=$_POST["prenom"];
         <a class="nav-link disabled" href="#"></a><i class="fab fa-glide-g"></i><?php $_SESSION["nom"]+$_SESSION["prenom"] ?></a>
       </li>
       <li><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></li>
-      
+
 </ul>
 
-      
+
 
   </form>
   </nav>
- 
-        
+
+
             <div class="row my-5">
                     <div class="col-md-3 offset-md-1 ">
                      <!-- Card -->
@@ -73,7 +71,7 @@ $_SESSION["prenom"]=$_POST["prenom"];
                        <!-- Avatar -->
                        <div class="avatar mx-auto white">
                          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle" alt="woman avatar">
-                       </div> 
+                       </div>
                        <!-- Content -->
                        <div class="card-body">
                          <!-- Name -->
@@ -84,7 +82,7 @@ $_SESSION["prenom"]=$_POST["prenom"];
                        </div>
                      </div>
                          <!-- Card -->
-                       
+
                         <div class="container mt-5">
                           <div class="card ">
                                   <h5 class="card-header blue-gradient text-white bg-primary">Featured</h5>
@@ -117,14 +115,14 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                                     <div class="list-group">
                                                       <a href="#!" class="list-group-item list-group-item-action">
                                                         Cras justo odio</a>
-                                                      
+
                                                       <a href="#!" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
                                                       <a href="#!" class="list-group-item list-group-item-action">Morbi leo risus</a>
                                                       <a href="#!" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
                                                       <a href="#!" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
                                                     </div></div>
                                                   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                                    
+
                                                       <div class="row">
                                                             <div class="span12">
                                                             <table class="table-condensed table-bordered table-striped">
@@ -132,9 +130,9 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                                                         <tr>
                                                                           <th colspan="7">
                                                                             <span class="btn-group">
-                                                                              
+
                                                                               <a class="btn active">February 2018</a>
-                                                                             
+
                                                                             </span>
                                                                           </th>
                                                                         </tr>
@@ -150,7 +148,7 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            
+
                                                                             <td>1</td>
                                                                             <td>2</td>
                                                                             <td>3</td>
@@ -188,7 +186,7 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                                                             <td>27</td>
                                                                             <td>28</td>
                                                                             <td>29</td>
-                                                                            
+
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -209,7 +207,7 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                         </div>
                                       </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-8">
                         <div class="card w-75 h-25">
@@ -219,8 +217,8 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                   <div class="col-md-4 "><img src="image/image6.png" alt="momen" style="width:200px;height:130px"></div>
                                   <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
                               </div>
-                              
-                              
+
+
                             </div>
                           </div>
                           <div class="card w-75 h-25 mt-5">
@@ -230,8 +228,8 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                   <div class="col-md-4 "><img src="image/image7.png" alt="momen" style="width:200px;height:130px"></div>
                                   <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it</div>
                               </div>
-                              
-                              
+
+
                             </div>
                           </div>
                           <div class="card w-75 h-25 mt-5">
@@ -241,8 +239,8 @@ $_SESSION["prenom"]=$_POST["prenom"];
                                   <div class="col-md-4 "><img src="image/image8.png" alt="momen" style="width:200px;height:130px"></div>
                                   <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it</p></div>
                               </div>
-                              
-                              
+
+
                             </div>
                           </div>
                           </div>
@@ -251,8 +249,8 @@ $_SESSION["prenom"]=$_POST["prenom"];
 <!-- Copyright -->
 <div class="footer-copyright text-center py-3">© 2018 Copyright:
 <a href="https://mdbootstrap.com/education/angular/"> MDBootstrap.com</a>
-</div>  
-</footer>               
+</div>
+</footer>
                   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
                   <!-- Bootstrap tooltips -->
                   <script type="text/javascript" src="js/popper.min.js"></script>
