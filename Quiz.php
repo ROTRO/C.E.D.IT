@@ -113,13 +113,13 @@ var x = setInterval(function() {
      <div style='border: 2px solid black;'>
      <div class='jumbotron' style='width:90%'>
        <form action='Quiz.php' method='Post'>
-       <h3 style='text-align:center;color:midnightblack;margin-top:2%;padding-right:5%;' id='Q' ><?php echo ' '.$tab1[$GLOBALS['i']][0]; ?> :</h3>
+       <h3 style='text-align:center;color:midnightblack;margin-top:2%;padding-right:5%;' id='Q' >:</h3>
        <table style=''>
 
-      <tr><td> <input type='radio' id='a'></td><td id='1'name='1'><?php echo ' '.$tab[$GLOBALS['i']][0]; ?></td></tr>
-      <tr><td> <input type='radio' id='b'></td><td id='2'name='2'><?php echo ' '.$tab[$GLOBALS['i']+1][0]; ?></td></tr>
-      <tr><td> <input type='radio' id='c'></td><td id='3'name='3'><?php echo ' '.$tab[$GLOBALS['i']+2][0]; ?></td></tr>
-      <tr><td> <input type='radio' id='d'></td><td id='4'name='4'><?php echo ' '.$tab[$GLOBALS['i']+3][0]; ?></td></tr>
+      <tr><td> <input type='radio' id='a'></td><td id='1'name='1'></td></tr>
+      <tr><td> <input type='radio' id='b'></td><td id='2'name='2'></td></tr>
+      <tr><td> <input type='radio' id='c'></td><td id='3'name='3'></td></tr>
+      <tr><td> <input type='radio' id='d'></td><td id='4'name='4'></td></tr>
 
      </table>
      <div style='margin-top:5%;text-align:center;'>
