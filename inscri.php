@@ -1,7 +1,14 @@
 <?php
 $cin = $sn = $nom = $prenom = $email = $tel = $login = $password = "";
 
-require 'Connect.php';
+try {
+$bdd= new PDO("mysql:host=localhost; dbname=127_0_0_1", 'root', '');
+echo "Connection success: ";
+}
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
 
 
     $cin=$_POST["CIN"];
@@ -26,7 +33,7 @@ require 'Connect.php';
         $bdd->exec($sql);
         var_dump($bdd->exec($sql));
         echo "New record created successfully";
-        
+
         }
         catch(PDOException $e)
             {
