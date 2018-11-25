@@ -33,13 +33,17 @@ catch(PDOException $e)
         $bdd->exec($sql);
         var_dump($bdd->exec($sql));
         echo "New record created successfully";
-        header('location:home.html');
+        session_start();
+        $_SESSION['nom']=$nom;
+        $_SESSION['prenom']=$prenom;
+
+        header('location:student.php');
 
         }
         catch(PDOException $e)
             {
             echo "Connection failed: " . $e->getMessage();
          }
-        
+
 
 ?>
