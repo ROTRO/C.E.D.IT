@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-echo ' Bienvenue'.$_SESSION['nom'].' '.$_SESSION['prenom'] ;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,7 +75,7 @@ echo ' Bienvenue'.$_SESSION['nom'].' '.$_SESSION['prenom'] ;
                        <!-- Content -->
                        <div class="card-body">
                          <!-- Name -->
-                         <h4 class="card-title">Anna Doe</h4>
+                         <h4 class="card-title"><?php echo $_SESSION['nom'].' '.$_SESSION['prenom'] ;?></h4>
                          <hr>
                          <!-- Quotation -->
                          <p><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
