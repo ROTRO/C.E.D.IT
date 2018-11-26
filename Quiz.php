@@ -33,11 +33,22 @@ function eext()
    print $GLOBALS['i'];
 }
 
+session_start();
+
+if($_POST['res']!='')
+ $_SESSION['Score']=$_POST['res'];
+ echo( $_SESSION['Score']);
+
 ?>
 
 
      <script>
+   $(document).ready(function(){
+     $("#res").mouseenter(function(){
 
+   $("#res").val("DOLKSDLDSK");
+ })
+})
     tab = <?php echo json_encode($GLOBALS['tab1'])?>;
     i=0;
     j=0;
@@ -86,9 +97,12 @@ function eext()
            }}
            OK=false;
            if (confirm('Are you sure you want to Submit your answer ?')) {
+
+
              document.getElementById('Next').setAttribute("type","Submit");
              document.getElementById('Next').innerHTML = 'Sumbit Answers';
            } else {
+
                alert(Score);
            }
 
@@ -114,6 +128,7 @@ function eext()
               if(document.getElementById('d').value =='V')
                Score++;
             }
+
         i++;
         j=j+4;
         document.getElementById('Q').innerHTML=tab[i][0];
@@ -183,11 +198,12 @@ var x = setInterval(function() {
       <tr><td> <input type='radio' name='a' id='d'></td><td id='4'name='4'></td></tr>
 
      </table>
+     <span id='res'hidden></span>
      <div style='margin-top:5%;text-align:center;'>
        <button class='btn btn-danger' type='button' id='Backward'>Backward</button>
        <button class='btn btn-success' type='button' onclick='next()' id='Next'>Next</button>
      </div>
-     <span id='A'></span>
+     <input type='text' id='res' value='' >
    </form>
      </div>
    </div>
