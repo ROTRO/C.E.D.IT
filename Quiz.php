@@ -188,7 +188,7 @@ var x = setInterval(function() {
    <div class='container'>
      <div style='border: 2px solid black;'>
      <div class='jumbotron' style='width:90%'>
-       <form action='Quiz.php' method='Post'>
+       <form action='student.php' method='Post'>
        <h3 style='text-align:center;color:midnightblack;margin-top:2%;padding-right:5%;' id='Q' >:</h3>
        <table style=''>
 
@@ -203,7 +203,7 @@ var x = setInterval(function() {
        <button class='btn btn-danger' type='button' id='Backward'>Backward</button>
        <button class='btn btn-success' type='button' onclick='next()' id='Next'>Next</button>
      </div>
-     <input type='text' id='res' value='' >
+     <input type='text' id='res' value='' hidden>
    </form>
      </div>
    </div>
