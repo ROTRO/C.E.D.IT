@@ -1,6 +1,24 @@
 <?php
 session_start();
+try {
+$bdd= new PDO("mysql:host=localhost; dbname=127_0_0_1", 'root', '');
+echo "Connection success: ";
+}
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
 
+    $name=$_SESSION['nom'];
+      echo $name;
+    $query = $bdd->query("SELECT `file_name` FROM `student` WHERE `fname_s`='$name' ");
+
+   if($query)
+    {$row = $query->fetch();
+    $imageURL = $row["file_name"];}
+    else {
+      echo ('request failed');
+    }
 
 ?>
 <!DOCTYPE html>
@@ -70,7 +88,12 @@ session_start();
                        <div class="card-up primary-color"></div>
                        <!-- Avatar -->
                        <div class="avatar mx-auto white">
-                         <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle" alt="woman avatar">
+
+                         <img src="<?php echo $imageURL; ?>" class="rounded-circle" alt="woman avatar">
+                         <form action="uploadimg.php" method="post" enctype="multipart/form-data">
+                             <input type="file" name="file">
+                             <input type="submit" name="submit" value="Upload">
+                         </form>
                        </div>
                        <!-- Content -->
                        <div class="card-body">
