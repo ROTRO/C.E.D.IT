@@ -1,9 +1,6 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -30,17 +27,17 @@ session_start();
         <li class="nav-item ">
           <a class="nav-link" href="group.html"><i class="fas fa-home"></i>Home<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="student.php"><i class="fas fa-user-circle"></i> profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="groupe.html"><i class="fab fa-glide-g"></i>group</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="groupe.html "><i class="fab fa-glide-g"></i> group</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="lessons.php"><i class="fas fa-book-open"></i> lessons</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="statistique.php"><i class="fas fa-chart-pie"></i>statistiques</a>
+          <a class="nav-link" href="statistique.php"><i class="fas fa-chart-pie"></i> statistiques</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="test.php"><i class="fas fa-scroll"></i> tests</a>
@@ -51,101 +48,48 @@ session_start();
     <form class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav">
       <li class="nav-item text-white">
-        <a class="nav-link disabled" href="#"></a><i class="fab fa-glide-g"></i><?php  echo $_SESSION['prenom']." ".$_SESSION['nom'] ?></a>
+        <a class="nav-link disabled" href="#"></a><i class="fab fa-glide-g"></i></a>
       </li>
       <li><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></li>
       </ul>
   </form>
   </nav>
-
-
-
-    <div class="container mt-5">
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 1 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
+  <div class="container mt-5 ">
+  <div class="card mt-2">
+  <div class="card-header black white-text">lesson number 1</div>
+  <div class="card-body">
+  
+  <div class="row">
+    <div class="col-2">
+    <img src="image/htmlp.png" style="height:100px;width:150px" alt="erreurs">
     </div>
-
-   <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 2 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
+    <div class="col-8">
+     <p class="card-text"> this is the place of the description that the teacher ill put to the student for more information and the inmportance of the lesson.</p>    </div>
+  </div>
+ </div>
+</div>
+<div class="card mt-2">
+  <div class="card-header black white-text">lesson number 1</div>
+  <div class="card-body">
+  
+  <div class="row">
+    <div class="col-2">
+    <img src="image/htmlp.png" style="height:100px;width:150px" alt="erreurs">
     </div>
+    <div class="col-8">
+     <p class="card-text"> this is the place of the description that the teacher ill put to the student for more information and the inmportance of the lesson.</p>    </div>
+  </div>
+ </div>
+</div>
 
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 3 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
-    </div>
-    
+</div>
 
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 4 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
-    </div>
-
-
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 5 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
-    </div>
-
-
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 6 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
-    </div>
-
-
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 7 </h5>
-                 <div class="row">  
-                <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
-    </div>
-
-
-    <div class="card w-100% h-25">
-            <div class="card-body">
-            <h5 class="card-title">new lesson HTML5 8 </h5>
-                 <div class="row">  
-                 <a href=""> <div class="col-md-3"><img src="image/htmlp.png" alt="erreur" style="width:200px;height:100px"></div> </a> 
-                 <div class="col-md-6"><p class="card-text">this is the place where the the lesson go there is a link with thhe picture if you want to enter it </div>
-            </div>
-         </div>
-    </div>
-
-    </div>
+</div>
+<footer class="page-footer font-small blue">
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2018 Copyright:
+<a href="https://mdbootstrap.com/education/angular/"> MDBootstrap.com</a>
+</div>  
+</footer>
 </body>
 </html>
